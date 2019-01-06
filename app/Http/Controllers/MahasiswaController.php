@@ -14,7 +14,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Category::all()->toArray());
     }
 
     /**
@@ -46,7 +46,7 @@ class MahasiswaController extends Controller
      */
     public function show(Mahasiswa $mahasiswa)
     {
-        //
+        return response()->json(Category::all()->toArray());
     }
 
     /**

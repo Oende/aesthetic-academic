@@ -14,7 +14,7 @@ class MataKuliahController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Category::all()->toArray());
     }
 
     /**
