@@ -13,18 +13,19 @@ use Illuminate\Http\Request;
 |
  */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::resource('/mahasiswa', 'MahasiswaController');
-    Route::resource('/matakuliah', 'MahasiswaController');
-    Route::resource('/matakuliahdetails', 'CategoryController');
+    Route::resource('/matakuliah', 'MataKuliahController');
+    Route::resource('/matakuliahdetails', 'MataKuliahDetailController');
 
-    Route::get('/mahasiswa', 'MahasiswaController@tasks');
-    Route::get('/matakuliah', 'CategoryController@tasks');
+    Route::get('/mahasiswa', 'MahasiswaController@index');
+    Route::get('/matakuliah', 'MataKuliahController@index');
+    Route::get('/matakuliahdetails/user/{id}', 'MataKuliahDetailController@index');
 });
