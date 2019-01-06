@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "Aesthetic Academic",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
-        "framework",
-        "laravel"
+        "oende",
+        "aesthetic",
+        "academic"
     ],
     "license": "MIT",
     "require": {
