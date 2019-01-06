@@ -14,7 +14,7 @@ class MataKuliahDetailController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Category::all()->toArray());
     }
 
     /**
@@ -35,7 +35,19 @@ class MataKuliahDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $matkuldet = MataKuliahDetail::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        $data = [
+            'data' => $task,
+            'status' => (bool)$task,
+            'message' => $task ? 'New Mmahasiswa has been added!' : 'Error adding new mahasiswa!',
+        ];
+
+        return response()->json($data);
     }
 
     /**
