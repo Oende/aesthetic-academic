@@ -11,7 +11,7 @@ use Laravel\Passport\HasApiTokens;
 
 class Mahasiswa extends Authenticatable
 {
-    use HasApiTokens, Notifiable, SoftDeletes;
+    use SoftDeletes, HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -31,7 +31,7 @@ class Mahasiswa extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function MataKuliah()
+    public function mataKuliah()
     {
         return $this->hasMany(MataKuliah::class);
     }
