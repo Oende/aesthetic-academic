@@ -14,7 +14,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        return response()->json(Category::all()->toArray());
+        return response()->json(Mahasiswa::all()->toArray());
     }
 
     /**
@@ -24,7 +24,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +35,16 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mhs = Mahasiswa::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password
+        ]);
+        return response()->json([
+            'status' => (bool)$task,
+            'data' => $task,
+            'message' => $task ? 'Mahasiswa added!' : 'Error adding new Mahasiswa!'
+        ]);
     }
 
     /**
@@ -46,7 +55,7 @@ class MahasiswaController extends Controller
      */
     public function show(Mahasiswa $mahasiswa)
     {
-        return response()->json(Category::all()->toArray());
+        return response()->json($task);
     }
 
     /**
