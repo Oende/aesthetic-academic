@@ -14,7 +14,7 @@ class MataKuliahDetailController extends Controller
      */
     public function index()
     {
-        return response()->json(Category::all()->toArray());
+        return response()->json(MataKuliahDetail::all()->toArray());
     }
 
     /**
@@ -58,7 +58,7 @@ class MataKuliahDetailController extends Controller
      */
     public function show(MataKuliahDetail $mataKuliahDetail)
     {
-        //
+        return response()->json($task);
     }
 
     /**
